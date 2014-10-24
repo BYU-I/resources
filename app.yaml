@@ -1,0 +1,24 @@
+application: byui-resources
+version: 1
+runtime: php
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /(.*\.html)
+  static_files: \1
+  upload: .*\.html
+
+
+
+- url: /assets
+  static_dir: assets
+
+- url: /modules
+  static_dir: modules
+
+- url: /partials
+  static_dir: partials
+
+- url: /views
+  static_dir: views
