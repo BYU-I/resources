@@ -1,0 +1,36 @@
+<div class="modal fade" id="familyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">{{family.coupleName}}</h4>
+			</div>
+			<div class="modal-body">
+				<img ng-src="{{tools.family.map(family)}}" alt="">
+				<div class="well" ng-controller="TagCtrl">
+					<ul class="list-group">
+						<li class="list-group-item" ng-repeat="tag in tags">
+							<span>{{tag.get('name')}}</span>
+							<span class="label label-info pull-right" 
+								ng-hide="tagTool.hasTag(tag, $parent.family)" 
+								ng-click="tagTool.toggle(tag, $parent.family)">
+								<i class="fa fa-tag"></i>
+							</span>
+							<span class="label label-danger pull-right" 
+								ng-show="tagTool.hasTag(tag, $parent.family)" 
+								ng-click="tagTool.toggle(tag, $parent.family)">
+								<i class="fa fa-trash"></i>
+							</span>
+						</li>
+						<li class="list-group-item"><a ng-click="tools.add()">New Tag</a></li>
+					</ul>
+					{{$parent.family.coupleName}}
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Something Else</button>
+			</div>
+		</div>
+	</div>
+</div>

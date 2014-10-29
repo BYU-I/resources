@@ -10,15 +10,8 @@ handlers:
   upload: .*\.html
 
 
+- url: /app
+  static_dir: app
 
 - url: /assets
   static_dir: assets
-
-- url: /modules
-  static_dir: modules
-
-- url: /partials
-  static_dir: partials
-
-- url: /views
-  static_dir: views
